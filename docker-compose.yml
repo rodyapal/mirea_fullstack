@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+    postgres:
+        container_name: mirea_fullstack_db
+        image: postgres
+        restart: on-failure
+        environment:
+            POSTGRES_USER: appUser
+            POSTGRES_PASSWORD: appPassword
+            POSTGRES_DB: appDb
+        volumes:
+            - ./backend/Database:/docker-entrypoint-initdb.d
+            - database:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+    backend:
+      build: backend/App/.
+      ports:
+            - '8080:8080'
+      container_name: mirea_fullstack_back
+    frontend:
+        build: frontend/.
+        ports:
+            - '8000:80'
+        container_name: mirea_fullstack_front
+volumes:
+    database:
