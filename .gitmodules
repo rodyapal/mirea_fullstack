@@ -1,6 +1,6 @@
 [submodule "frontend"]
-  path = frontend
-  url = https://github.com/rodyapal/mirea_fullstack_frontend
+	path = frontend
+	url = https://github.com/rodyapal/mirea_fullstack_frontend
 [submodule "backend"]
-  path = backend
-  url = https://github.com/rodyapal/mirea_fullstack_backend
+	path = backend
+	url = https://github.com/rodyapal/mirea_fullstack_backend
